@@ -1,4 +1,6 @@
 import router from '@ohos.router'
+import {Cus1Component} from '../pages/Cus1Component';
+
 @Entry
 @Component
 struct Index {
@@ -51,11 +53,7 @@ struct Index {
       .height('45%')
       Row() {
         Column() {
-          Text("area3")
-            .width('100%')
-            .fontSize(50)
-            .fontWeight(FontWeight.Bold)
-            .textAlign(TextAlign.Center)
+          Cus1Component({  })
         }
         .width('100%')
         .height('100%')
