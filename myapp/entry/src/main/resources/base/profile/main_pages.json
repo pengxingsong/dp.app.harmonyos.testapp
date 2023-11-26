@@ -1,7 +1,11 @@
 {
   "src": [
     "pages/Index",
-    "pages/Page2",
-    "pages/Page3"
+    "pages/base/goto/GoPageIndex",
+    "pages/base/goto/GoPage3",
+    "pages/base/images/ImageIndex",
+    "pages/demo/todo/TodoIndex",
+    "pages/base/inputs/InputIndex",
+    "pages/base/comps/PageHand"
   ]
 }

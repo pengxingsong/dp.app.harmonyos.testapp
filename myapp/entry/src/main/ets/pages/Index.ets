@@ -1,66 +1,45 @@
 import router from '@ohos.router'
-import {Cus1Component} from '../pages/Cus1Component';
 
 @Entry
 @Component
 struct Index {
-  @State message: string = 'Hello World'
-
   build() {
     Column() {
-      Row(){
-        Text(this.message)
-          .width('100%')
-          .fontSize(40)
-          .textAlign(TextAlign.Center)
-      }
-      .width('100%')
-      .height('10%')
-      Row() {
-        Column() {
-          Text('to page2')
-            .fontSize(30)
-            .fontWeight(FontWeight.Bold)
-            .onClick(()=>{
-               router.pushUrl({url:'pages/Page2'})
-                 .then(()=>{
-                   console.log('执行 then')
-                 })
-                 .catch(()=>{
-                   console.log('执行 catch')
-                 })
-                 .finally(()=>{
-                   console.log('执行 finally')
-                 })
-            })
-          Text('点击可到详情页')
-            .fontSize(20)
+        Text('HarmonyOS ArkTS 学习')
+        .width('100%').padding({bottom:5}).textAlign(TextAlign.Center)
+        .fontSize(24).fontFamily($r('app.string.Huawei_Font'))
+        Text('基础控件')
+          .width('100%').padding({bottom:5})
+          .fontSize(18).fontFamily($r('app.string.Huawei_Font'))
+        Row(){
+          Button("文本")
+            .width(80).height(22).fontSize(12).margin({right:5})
+            .onClick(()=>{ router.pushUrl({url:'pages/base/inputs/InputIndex'}) })
+          Button("图片")
+            .width(80).height(22).fontSize(12).margin({right:5})
+            .onClick(()=>{ router.pushUrl({url:'pages/base/images/ImageIndex'}) })
+          Button("跳转")
+            .width(80).height(22).fontSize(12).margin({right:5})
+            .onClick(()=>{ router.pushUrl({url:'pages/base/goto/GoPageIndex'}) })
         }
-        .width('50%')
-        .height('100%')
-        .backgroundColor('#ff0')
+        .width('100%').padding({top:5,bottom:10})
 
-        Column() {
-          Text("area2")
-            .fontSize(50)
-            .fontWeight(FontWeight.Bold)
+        Text('作业')
+          .width('100%')
+          .fontSize(18)
+          .fontFamily($r('app.string.Huawei_Font'))
+        Row() {
+          Button("待办事项")
+            .width(80)
+            .height(22)
+            .fontSize(12)
+            .margin({ right: 5 })
+            .onClick(() => {
+              router.pushUrl({ url: 'pages/demo/todo/TodoIndex' })
+            })
         }
-        .width('50%')
-        .height('100%')
-        .backgroundColor('#f10')
-      }
-      .width('100%')
-      .height('45%')
-      Row() {
-        Column() {
-          Cus1Component({  })
-        }
-        .width('100%')
-        .height('100%')
-      }
-      .width('100%')
-      .height('45%')
-      .backgroundColor("#f5f")
+        .width('100%').padding({top:5,bottom:10})
     }
+    .padding(10)
   }
 }
